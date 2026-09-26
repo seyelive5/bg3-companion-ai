@@ -26,13 +26,13 @@ The goal is not an optimal robot: it is a party that feels like a co-op partner.
 
 **`.pak` (권장)**
 
-1. 릴리즈에서 `PartyTactics.pak` 을 받습니다.
+1. 릴리즈에서 `PartyTactics-<버전>.pak` 을 받습니다.
 2. `%LOCALAPPDATA%\Larian Studios\Baldur's Gate 3\Mods\` 에 넣습니다.
 3. 모드 매니저(BG3 Mod Manager · Vortex)에서 켭니다.
 
 **느슨한 파일 (매니저를 안 쓰거나 pak 이 안 먹을 때)**
 
-1. `PartyTactics-loose.zip` 을 받습니다.
+1. `PartyTactics-<버전>-loose.zip` 을 받습니다.
 2. 안의 `Data` 폴더를 게임 설치 폴더에 덮어씁니다
    (`...\steamapps\common\Baldurs Gate 3\Data`).
 
@@ -53,14 +53,17 @@ who is on AI, what it picked and why, and the settings.
 이름으로 특별 취급하는 목록이 아니라, 그 행동이 실제로 만드는 **결과의 값**으로 고릅니다.
 
 - 쓰러진 동료 일으키기, 치유, 집중 끊기, 자원 아끼기
-- 자리 — 사선 · 고저차 · 위험 표면 · 기회공격 · 실제 걸어갈 길
+- 자리 — 사선 · 고저차 · 위험 표면 · 기회공격 · 실제 걸어갈 길 (다른 몸 · 계단식 턱 · 사다리)
+- 두루마리 (생환 두루마리로 죽은 동료 되살리기 등) · 치유 물약 던지기 — 물건은 게임 AI 의 물건 할인 그대로 아껴 씁니다
+- 사거리 · 기회공격 반경 · 치명타 · 낙하 피해 · 밀치기와 던지기 거리 · 명중 유리/불리는 게임이 계산하는 식 그대로
 - 소환수도 같이 몹니다
 
 ## 알려진 한계 / Known limits
 
-- 방어형 자기 버프(거울 이미지 · 화염 방패 류)의 값을 아직 안 셉니다.
-- 던진 물건의 결과를 아직 안 셉니다 (치유 물약 던지기는 동작하지만 값이 0 입니다).
+- 물약을 **마시는** 것은 아직 안 합니다 (던지기만).
+- 멀리 던진 물건이 지형에 막히는지는 던지기 전에 아직 못 가립니다.
 - 특수 기믹이 있는 전투는 아직 손대지 않았습니다.
+- 적이 아주 많은 전투(적 20명 안팎)에서는 동료 한 명이 생각하는 데 몇 초씩 걸릴 수 있습니다.
 
 ## 소스 / Source
 
