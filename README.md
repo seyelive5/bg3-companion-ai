@@ -27,7 +27,13 @@ MCM is **not** needed: all settings live in the mod's own window (F11).
 
 ## 설치 / Install
 
-**`.pak` (권장 / recommended)**
+**모드 매니저 (권장 / recommended)**
+
+1. 릴리즈에서 `PartyTactics-<버전>.zip` 을 받습니다 (안에 `PartyTactics.pak` 하나).
+2. BG3 Mod Manager 에 끌어다 놓거나 Vortex 로 설치하고 켭니다.
+   Drag the zip into BG3 Mod Manager, or install it with Vortex, then enable the mod.
+
+**`.pak`**
 
 1. 릴리즈에서 `PartyTactics-<버전>.pak` 을 받습니다.
 2. `%LOCALAPPDATA%\Larian Studios\Baldur's Gate 3\Mods\` 에 넣습니다.
@@ -63,11 +69,17 @@ Hotkeys can be changed in the **Settings** tab (Ctrl · Shift · Alt combos work
 
 ### 차례 표시 / Turn display
 
-AI 차례에는 화면 위쪽 가운데에 작은 한 줄이 뜹니다 — 먼저 "생각 중", 행동이 정해지면
-**누가 · 무엇을 · 누구에게** (주문 아이콘과 함께). 마우스를 올리면 **고른 이유** 두세 줄이 보입니다.
+AI 동료의 차례에는 그 동료 **머리 위**에 작은 표시가 뜹니다 — 먼저 "생각 중", 행동이 정해지면
+**무엇을 · 누구에게** (주문 아이콘과 함께). 카메라가 그 동료를 따라갑니다 (설정에서 끌 수 있습니다).
+**당신 차례**가 오면 당신 캐릭터 머리 위에 "당신 차례", 화면 위쪽에 "이름 · 당신 차례" 가 잠깐 뜨고 카메라가 당신 캐릭터로 돌아옵니다.
+AI 동료와 차례를 함께 쓰면 **AI 가 먼저** 움직이고, 그동안의 클릭은 무시합니다 (Esc 나 Ctrl + T 로 풉니다).
+화면 위쪽 한 줄 표시(마우스를 올리면 **고른 이유**)는 설정에서 켤 수 있습니다 (기본 꺼짐).
 
-During an AI turn a small line appears at the top of the screen: first "Thinking", then
-**who · what · on whom** with the spell icon. Hover it to see **why** it chose that.
+During an AI companion's turn a small label appears **above that companion**: first "Thinking", then
+**what · on whom** with the spell icon. The camera follows it (can be turned off in Settings).
+When **your turn** comes, "Your turn" appears above your character and briefly at the top of the screen, and the camera comes back to your character.
+When AI companions share your turn, **they act first** and clicks are ignored until they finish (press Esc or Ctrl + T to click anyway).
+The line at the top of the screen (hover it to see **why** it chose that) can be turned on in Settings (off by default).
 
 ## 설정 / Settings (F11 → Settings)
 
@@ -75,7 +87,8 @@ During an AI turn a small line appears at the top of the screen: first "Thinking
 |---|---|
 | 언어 · Language | 자동(게임 언어) · English · 한국어 — 한국어는 게임 언어가 한국어일 때만 (SE 창 글꼴) |
 | 단축키 · Hotkey | 위 세 가지 / the three above |
-| 차례 표시 · Turn display | 보이기 · 마우스를 올리면 이유 · 애니메이션 끄기 / show · reasons on hover · no animation |
+| 차례 표시 · Turn display | 머리 위 표시(기본 켬) · 위쪽 줄(기본 끔) · 마우스를 올리면 이유 · 애니메이션 끄기 · AI 동료가 행동하는 동안 클릭 무시 · 카메라 따라가기(기본 켬) / label above the character (on) · line at the top (off) · reasons on hover · no animation · ignore clicks while an AI companion is acting · camera follows the AI companion (on) |
+| 반응 · Reactions | 주문 슬롯을 쓰는 반응(방패 · 역주문 …)도 AI 가 쓸지 / let the AI use reactions that cost spell slots (Shield, Counterspell…) |
 | 광역 주문 · Area spells | **아군 피격 허용 / 허용 안 함** — 허용이면 "적에게 주는 피해 − 아군 피해 × 4" 가 다른 행동보다 클 때만 씁니다 (Larian 의 적 AI 와 같은 무게) |
 | 생각 시간 · Thinking time | **깊게**(기본 · 제한 없음) · **보통**(한 번에 약 4초) · **빠르게**(약 2초) — 시간이 다 되면 그때까지 찾은 최선 |
 | 주문 슬롯 · Spell slots | 자동(보스급 적이 있으면 아끼지 않기) · 항상 아끼기 · 항상 아끼지 않기 |
@@ -95,6 +108,8 @@ or an ally the spell could knock down.
 - 사거리 · 기회공격 반경 · 치명타 · 낙하 피해 · 밀치기와 던지기 거리 · 명중 유리/불리는 게임이 계산하는 식 그대로
 - 원거리 공격은 주문의 투사체 궤적 자료로 곡선을 그려 벽 · 지형 · 동료에 막히는지 보고, 막히면 쏘지 않고 트인 자리로 옮겨 쏩니다
 - 높은 곳에서 쏠 수 있으면 그 자리에서 쏩니다 (게임이 다른 자리로 걸려 보내지 않게)
+- 짧은 자리 옮기기(6m 미만)에는 점프 · 순간이동을 쓰지 않고, 횟수가 정해진 순간이동(안개 걸음 등)은 적 곁에서 빠지거나 옮긴 자리에서 곧바로 행동이 닿을 때만 씁니다
+- 기회공격을 부르거나 공중에서 끊길 점프는 고르지 않고, 순간이동 착지는 게임이 받아 주는 자리로 고릅니다
 - 소환수도 같이 몹니다
 
 ## 버그 제보 / Bug reports
@@ -115,6 +130,7 @@ settings file (`Script Extender\party_tactics_settings.json`).
 - 오래 남는 구름 · 장판에 동료가 나중에 걸어 들어가는 경우는 광역 주문 규칙이 아직 안 봅니다.
 - 특수 기믹이 있는 전투는 아직 손대지 않았습니다.
 - 적이 아주 많은 전투에서는 동료 한 명이 몇 초씩 생각할 수 있습니다 — 설정의 **생각 시간**으로 줄일 수 있습니다.
+- 멀티플레이 · 패드는 시험하지 않았습니다 (카메라 따라가기는 혼자 하는 판 기준입니다). / Multiplayer and controllers are untested.
 
 ## 소스 / Source
 
