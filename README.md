@@ -92,6 +92,15 @@ The line at the top of the screen (hover it to see **why** it chose that) can be
 | 광역 주문 · Area spells | **아군 피격 허용 / 허용 안 함** — 허용이면 "적에게 주는 피해 − 아군 피해 × 4" 가 다른 행동보다 클 때만 씁니다 (Larian 의 적 AI 와 같은 무게) |
 | 생각 시간 · Thinking time | **깊게**(기본 · 제한 없음) · **보통**(한 번에 약 4초) · **빠르게**(약 2초) — 시간이 다 되면 그때까지 찾은 최선 |
 | 주문 슬롯 · Spell slots | 자동(보스급 적이 있으면 아끼지 않기) · 항상 아끼기 · 항상 아끼지 않기 |
+| 물건 쓰기 · Items | 두루마리 · 폭탄 · 물약 · 특수 화살마다 **안 씀 · 아끼기**(게임의 적 AI 와 같은 기준) **· 보통**(기본) **· 아끼지 않기** — 파티 탭의 **캐릭터별 물건 쓰기**에서 캐릭터마다 따로 / for scrolls · bombs and grenades · potions · special arrows: Don't use · Save · Normal (default) · Never save — also per character in the Party tab (**Items by character**) |
+
+동료는 **자기 가방의 물건만** 씁니다 (가방 속 주머니까지). 쓰게 하려면 그 동료에게 건네 주세요.
+아끼기는 자기 주문 · 공격보다 3배쯤 좋을 때만, 보통은 1.7배쯤, 아끼지 않기는 같거나 좋으면 씁니다 — 쓰면 없어지니 작은 이득에는 (특히 마지막 하나는) 아낍니다.
+네 종류에 안 드는 물건 (도구 · 이야기 물건 · 음식 등) 은 쓰지 않습니다.
+
+Companions use **only the items in their own inventory** (including pouches inside it) — give an item to the companion who should use it.
+Save uses an item only when it is about 3 times better than the companion's own spells and attacks, Normal about 1.7 times, Never save when it is at least as good.
+Items outside these four kinds (tools, story items, food…) are not used.
 
 광역 주문은 설정과 관계없이 **직접 조종하는 캐릭터**, **쓰러진 아군**, **맞으면 쓰러질 수 있는 아군**이 범위에 있으면 쓰지 않습니다.
 Regardless of the setting, area spells are never cast onto a character you control directly, a downed ally,
@@ -104,7 +113,10 @@ or an ally the spell could knock down.
 
 - 쓰러진 동료 일으키기, 치유, 집중 끊기, 자원 아끼기
 - 자리 — 사선 · 고저차 · 위험 표면 · 기회공격 · 실제 걸어갈 길 (다른 몸 · 계단식 턱 · 사다리)
-- 두루마리 (생환 두루마리로 죽은 동료 되살리기 등) · 치유 물약 던지기 — 물건은 게임 AI 의 물건 할인 그대로 아껴 씁니다
+- 가방의 물건 — 두루마리 (생환 두루마리로 죽은 동료 되살리기 등) · 폭탄 (동료가 휘말리지 않게 적에게 — 종류마다 얼마나 빗나가는지 던져 보며 배우고, 던진 동료 · 곁의 동료가 맞을 몫도 셉니다) ·
+  물약 (동료에게 던져 치유하고, 싸움에 도움이 될 때 보조 행동으로 스스로 마십니다 — 치유 물약은 HP 가 절반 밑이거나 곧 크게 다칠 것 같을 때만, 비약 · 독 · 기름은 안 씁니다) · 특수 화살
+- 주문을 쓴 뒤에는 그 동작이 끝날 때까지 기다렸다가 걷거나 다음 주문을 씁니다 (물약을 마신 뒤에도)
+- 이미 묶인 적에게 같은 턴을 막는 제어 주문을 낭비하지 않고, 잠들었거나 최면 무늬에 걸린 적은 다른 적이 남아 있는 동안 건드리지 않습니다 (마지막 적이거나 한 번에 쓰러뜨릴 수 있으면 칩니다)
 - 사거리 · 기회공격 반경 · 치명타 · 낙하 피해 · 밀치기와 던지기 거리 · 명중 유리/불리는 게임이 계산하는 식 그대로
 - 원거리 공격은 주문의 투사체 궤적 자료로 곡선을 그려 벽 · 지형 · 동료에 막히는지 보고, 막히면 쏘지 않고 트인 자리로 옮겨 쏩니다
 - 높은 곳에서 쏠 수 있으면 그 자리에서 쏩니다 (게임이 다른 자리로 걸려 보내지 않게)
@@ -125,8 +137,7 @@ settings file (`Script Extender\party_tactics_settings.json`).
 
 ## 알려진 한계 / Known limits
 
-- 물약을 **마시는** 것은 아직 안 합니다 (던지기만).
-- 멀리 던진 물건이 지형에 막히는지는 던지기 전에 아직 못 가립니다.
+- 치유 물약을 던질 때 가는 길이 막히는지는 아직 미리 못 가립니다 (폭탄은 던질 선을 봅니다).
 - 오래 남는 구름 · 장판에 동료가 나중에 걸어 들어가는 경우는 광역 주문 규칙이 아직 안 봅니다.
 - 특수 기믹이 있는 전투는 아직 손대지 않았습니다.
 - 적이 아주 많은 전투에서는 동료 한 명이 몇 초씩 생각할 수 있습니다 — 설정의 **생각 시간**으로 줄일 수 있습니다.
