@@ -58,6 +58,12 @@ When a save loads, the **Party Tactics window** opens (its title shows the key t
 In the **Party** tab, set each character to **AI** or **Direct**; in combat the AI plays the turns of the
 characters you handed over. Summons follow their owner.
 
+파티 탭에서 동료의 역할을 **소환사**로 고르면 아래에 **소환사** 구획이 생깁니다. 쓸 소환 주문을 체크해 두면 첫 차례에 체크한 소환을 먼저 쓰고,
+그 뒤로는 아직 나와 있지 않은 것을 차례마다 하나씩 부릅니다 (구획의 두 칸으로 끌 수 있습니다).
+
+If you set a companion's role to **Summoner** in the Party tab, a **Summoners** section appears below. Check the summon spells it should use:
+it casts a checked summon on its first turn, then calls one checked summon that is not out yet each turn (two checkboxes there turn this off).
+
 | 단축키 / Hotkey | 하는 일 / What it does |
 |---|---|
 | **F11** | 창 열기/닫기 · Open/close the window |
@@ -90,6 +96,7 @@ The line at the top of the screen (hover it to see **why** it chose that) can be
 | 차례 표시 · Turn display | 머리 위 표시(기본 켬) · 위쪽 줄(기본 끔) · 마우스를 올리면 이유 · 애니메이션 끄기 · AI 동료가 행동하는 동안 클릭 무시 · 카메라 따라가기(기본 켬) / label above the character (on) · line at the top (off) · reasons on hover · no animation · ignore clicks while an AI companion is acting · camera follows the AI companion (on) |
 | 반응 · Reactions | 주문 슬롯을 쓰는 반응(방패 · 역주문 …)도 AI 가 쓸지 / let the AI use reactions that cost spell slots (Shield, Counterspell…) |
 | 광역 주문 · Area spells | **아군 피격 허용 / 허용 안 함** — 허용이면 "적에게 주는 피해 − 아군 피해 × 4" 가 다른 행동보다 클 때만 씁니다 (Larian 의 적 AI 와 같은 무게) |
+| 소환 주문 · Summons | 전투 중에 AI 가 소환 주문 쓰기 (기본 켬) — 끄면 이미 불러낸 소환수만 움직입니다 / let the AI cast summon spells in combat (on by default); when off, summons already out still act |
 | 생각 시간 · Thinking time | **깊게**(기본 · 제한 없음) · **보통**(한 번에 약 4초) · **빠르게**(약 2초) — 시간이 다 되면 그때까지 찾은 최선 |
 | 주문 슬롯 · Spell slots | 자동(보스급 적이 있으면 아끼지 않기) · 항상 아끼기 · 항상 아끼지 않기 |
 | 물건 쓰기 · Items | 두루마리 · 폭탄 · 물약 · 특수 화살마다 **안 씀 · 아끼기**(게임의 적 AI 와 같은 기준) **· 보통**(기본) **· 아끼지 않기** — 파티 탭의 **캐릭터별 물건 쓰기**에서 캐릭터마다 따로 / for scrolls · bombs and grenades · potions · special arrows: Don't use · Save · Normal (default) · Never save — also per character in the Party tab (**Items by character**) |
@@ -127,6 +134,8 @@ or an ally the spell could knock down.
 - 다가가서 쏘는 대부분의 주문은 걷기와 시전을 한 동작으로 하고, 걸은 뒤에는 실제로 선 자리에서 남은 행동을 다시 짭니다. 자리를 옮길 때 드는 이동력은 실제로 걸을 길로 잽니다
 - 자리를 고치려고 6m 미만을 옮길 때는 점프 · 순간이동을 쓰지 않고 (옮긴 자리에서 곧바로 행동이 닿을 때는 예외), 횟수가 정해진 순간이동(안개 걸음 등)은 적 곁에서 빠지거나 옮긴 자리에서 곧바로 행동이 닿을 때만 씁니다
 - 기회공격을 부르거나 공중에서 끊길 점프는 고르지 않고, 순간이동 착지는 게임이 받아 주는 자리로 고릅니다
+- 소환 주문 — 적 곁 · 지킬 동료 앞 · 자기 곁 가운데 소환수가 가장 쓸모 있는 자리에 부릅니다. 자리는 게임이 받아 주는 곳으로 고르고 (다른 몸 · 문 · 큰 소환수가 턱에 걸치는 바닥을 피합니다) 한 차례에 둘을 부르면 자리를 나눕니다. 싸울 힘이 없는 패밀리어 · 애완동물은 쓰지 않습니다
+- 시전자 앞 직사각형 범위 주문 (천둥파 · 번개 줄기 · 돌풍) 은 게임과 같은 규칙으로 맞을 몸을 셉니다 — 벽 · 문 뒤의 몸은 빼고, 표적에 닿지 않는 자리에서는 쓰지 않습니다
 - 소환수도 같이 몹니다
 
 ## 버그 제보 / Bug reports
@@ -144,6 +153,8 @@ settings file (`Script Extender\party_tactics_settings.json`).
 
 - 치유 물약을 던질 때 가는 길이 막히는지는 아직 미리 못 가립니다 (폭탄은 던질 선을 봅니다).
 - 밀치기 같은 주문이 가끔 동료가 올라갈 수 없는 자리 (예: 위쪽 턱) 를 고릅니다 — 잠깐 멈칫한 뒤 다른 행동을 합니다. / Shove and similar spells sometimes pick a spot the companion cannot walk up to (such as a ledge above it); it pauses briefly and does something else.
+- 시전자 둘레에 피해를 주는 외침 주문 (비하의 팔 · 파괴의 물결 · 새벽의 광휘 등) 은 게임이 받아 주지 않아 동료가 다른 행동을 합니다 (고칠 예정). / Damaging spells centred on the caster (Arms of Hadar, Destructive Wave, Radiance of the Dawn) are refused by the game, so the companion does something else (a fix is planned).
+- 다가가서 쏘는 주문의 걸음이 가끔 실패합니다 — 동료가 다른 행동을 합니다. / When a spell needs a few steps first, the walk sometimes fails and the companion does something else.
 - 오래 남는 구름 · 장판에 동료가 나중에 걸어 들어가는 경우는 광역 주문 규칙이 아직 안 봅니다.
 - 특수 기믹이 있는 전투는 아직 손대지 않았습니다.
 - 적이 아주 많은 전투에서는 동료 한 명이 몇 초씩 생각할 수 있습니다 — 설정의 **생각 시간**으로 줄일 수 있습니다.
