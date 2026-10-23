@@ -91,13 +91,15 @@ Turn off **Target choice** in Settings to let each companion pick its own target
 AI 동료의 차례에는 그 동료 **머리 위**에 금빛 메달과 리본이 뜹니다 — 먼저 "생각 중" (도는 문양), 행동이 정해지면 주문 아이콘과
 **무엇을 · 누가 ▸ 누구에게**, 둘째 줄에 **명중 · 쓰러뜨릴 확률** (치유면 회복량). 카메라가 그 동료를 따라갑니다 (설정에서 끌 수 있습니다).
 **당신 차례**가 오면 당신 캐릭터 머리 위에 "당신 차례", 화면 위쪽에 "이름 · 당신 차례" 가 잠깐 뜨고 카메라가 당신 캐릭터로 돌아옵니다.
-AI 동료와 차례를 함께 쓰면 **AI 가 먼저** 움직이고, 그동안의 클릭은 무시합니다 (Esc 나 Ctrl + T 로 풉니다).
+AI 동료와 차례를 함께 쓰면 **AI 가 먼저** 움직이고, 그동안의 클릭은 무시합니다 (Esc 나 Ctrl + T 로 풉니다). 대화 · 반응 묻기 창이 떠 있는 동안에는 클릭을 막지 않습니다.
+전투 밖에서 **턴제 모드**를 켜면 그동안 AI 가 쉬고 모든 캐릭터를 직접 움직입니다 — 싸움이 나거나 턴제 모드를 끄면 AI 가 다시 맡습니다 (화면 위쪽에 알림이 뜹니다).
 화면 위쪽 한 줄 표시(마우스를 올리면 **고른 이유**)는 설정에서 켤 수 있습니다 (기본 꺼짐).
 
 During an AI companion's turn a gold medal and ribbon appear **above that companion**: first "Thinking" (a turning rune), then the spell icon with
 **what · who ▸ on whom**, and a second line with the **chance to hit or take the target down** (or the amount healed). The camera follows it (can be turned off in Settings).
 When **your turn** comes, "Your turn" appears above your character and briefly at the top of the screen, and the camera comes back to your character.
-When AI companions share your turn, **they act first** and clicks are ignored until they finish (press Esc or Ctrl + T to click anyway).
+When AI companions share your turn, **they act first** and clicks are ignored until they finish (press Esc or Ctrl + T to click anyway). Clicks are not blocked while a dialogue or a reaction prompt is waiting for your choice.
+While **turn-based mode** is on outside combat, the AI pauses and you move everyone yourself; it takes over again when combat starts or you turn turn-based mode off (a notice at the top of the screen says so).
 The line at the top of the screen (hover it to see **why** it chose that) can be turned on in Settings (off by default).
 
 ## 설정 / Settings (F11 → Settings)
@@ -124,8 +126,12 @@ Save uses an item only when it is about 3 times better than the companion's own 
 Items outside these four kinds (tools, story items, food…) are not used.
 
 광역 주문은 설정과 관계없이 **직접 조종하는 캐릭터**, **쓰러진 아군**, **맞으면 쓰러질 수 있는 아군**이 범위에 있으면 쓰지 않습니다.
+해로움 표지가 없어도 효과가 해롭거나 발을 묶는 광역 (최면 문양 · 돌풍 · 물 생성 등) 도 같은 규칙을 따릅니다.
+첫 표적 곁의 표적을 더 고르는 주문 (상위 레벨 인간형 매혹 · 추방 · 괴물 포박) 은 적을 겨누면 더할 표적도 적에서 고릅니다.
 Regardless of the setting, area spells are never cast onto a character you control directly, a downed ally,
-or an ally the spell could knock down.
+or an ally the spell could knock down. This also applies to area effects that hurt or hinder without the game's harmful flag
+(Hypnotic Pattern, Gust of Wind, Create Water and similar). Spells that take extra targets near the first one
+(upcast Charm Person, Banishment, Hold Monster) take them from enemies.
 
 ## 무엇을 보고 고르나 / What it reasons about
 
@@ -134,15 +140,18 @@ or an ally the spell could knock down.
 
 - 쓰러진 동료 일으키기, 치유, 집중 끊기, 자원 아끼기
 - 자리 — 사선 · 고저차 · 위험 표면 · 기회공격 (몬스터의 발톱 · 물기 같은 타고난 공격까지) · 실제 걸어갈 길 (다른 몸 · 계단식 턱 · 사다리)
-- 다음 적 차례 — 적마다 누구를 칠지 (근접은 가까운 쪽 · 원거리는 닿는 사람에게 고르게 · 맞히기 쉬운 쪽을 조금 더) 와 동료마다 쓰러질 확률 (이미 붙은 불타기 같은 지속 피해까지) 을 셉니다. 설 자리 · 소환 자리 · 치유 물약을 마실지에 씁니다
+- 다음 적 차례 — 적마다 누구를 칠지 (근접은 가까운 쪽 · 원거리는 닿는 사람에게 고르게 · 맞히기 쉬운 쪽 · 그 적이 이 싸움에서 노려 온 사람 · 그 적을 친 사람을 더 · 사거리가 더 긴 다른 공격까지 · 다음 차례에 실제로 쓸 수 있는 공격만) 와 동료마다 쓰러질 확률 (마력탄처럼 여러 발 나가는 공격은 발마다 · 이미 붙은 불타기 같은 지속 피해까지) 을 셉니다. 설 자리 · 소환 자리 · 치유 물약을 마실지 · 방어 주문 (AC · 저항 · 임시 HP) 의 값에 씁니다
 - 팀 집중 — 위 "팀 집중" 처럼 공격할 적을 팀 기준으로 (집중 표적 · 다친 적 마무리)
 - 가방의 물건 — 두루마리 (생환 두루마리로 죽은 동료 되살리기 등) · 폭탄 (동료가 휘말리지 않게 적에게 — 종류마다 얼마나 빗나가는지 던져 보며 배우고, 던진 동료 · 곁의 동료가 맞을 몫도 셉니다) ·
   물약 (동료에게 던져 치유하고, 싸움에 도움이 될 때 보조 행동으로 스스로 마십니다 — 치유 물약은 HP 가 절반 밑이거나 곧 크게 다칠 것 같을 때만, 비약 · 독 · 기름은 안 씁니다) · 특수 화살
 - 던질 물건은 게임이 실제로 날릴 곡선이 지형 · 장식물에 걸려 표적 앞에 떨어질 자리에서는 던지지 않고, 치유 물약은 가는 길의 몸 · 튐 범위의 적 (적도 치유된다) 까지 봅니다
 - 무기를 떨어뜨리면 (금속 가열 등) 위험하지 않을 때 걸어가 자기 무기를 주워 다시 들고, 무기가 없는 동안에는 무기 기술을 쓰지 않습니다
 - 주문을 쓴 뒤에는 그 동작이 끝날 때까지 기다렸다가 걷거나 다음 주문을 씁니다 (물약을 마신 뒤에도)
-- 이미 묶인 적에게 같은 턴을 막는 제어 주문을 낭비하지 않고, 잠들었거나 최면 무늬에 걸린 적은 다른 적이 남아 있는 동안 건드리지 않습니다 (마지막 적이거나 한 번에 쓰러뜨릴 수 있으면 칩니다)
+- 이미 묶인 적에게 같은 턴을 막는 제어 주문을 낭비하지 않고, 잠들었거나 최면 문양에 걸린 적은 다른 적이 남아 있는 동안 건드리지 않습니다 (마지막 적이거나 한 번에 쓰러뜨릴 수 있으면 칩니다)
 - 수호자 역할은 가장 위협적인 적을 먼저 도발하고, 분명히 더 나은 행동이 없으면 그 적을 노립니다
+- 역할을 자동으로 정할 때 장비가 휴식마다 한 번 주는 주문은 세지 않습니다
+- 버프 · 보호 주문은 받는 사람의 처지로 셉니다 — 쓰러진 동료에게는 가속처럼 공격을 늘리는 몫을 세지 않고, 죽은 척 두루마리처럼 동료를 여러 턴 싸움에서 빼는 주문은 손해로 셉니다
+- 게임이 적 주문 표지를 달았지만 플레이어도 쓰는 능력 (정신파 · 소환 정령의 공격 등) 도 씁니다
 - 쌍둥이 주문처럼 표적을 늘리는 토글은 서로 다른 표적을 고릅니다 (둘째 표적이 없으면 토글 없이 씁니다)
 - 시전자 둘레에 피해를 주는 외침 주문 (비하의 팔 · 파괴의 물결 · 새벽의 광휘) 은 시전자 자신을 표적으로 냅니다 (게임이 그렇게 받습니다)
 - 행동 급증처럼 행동을 늘려 주는 기술은 덤 행동으로 할 일까지 짜서 씁니다 (적이 하나뿐이면 같은 적을 한 번 더)
@@ -150,6 +159,8 @@ or an ally the spell could knock down.
 - 한 차례에 여러 행동을 짤 때 직업 자원 · 명중할 때 드는 비용 (손 얹기 횟수 · 강타 등) 을 같이 세고, 빗나가 안 치렀으면 남은 것으로 다시 짭니다
 - 사거리 · 기회공격 반경 · 치명타 · 낙하 피해 · 밀치기와 던지기 거리 · 명중 유리/불리는 게임이 계산하는 식 그대로
 - 시전하기 전에 게임이 보는 것을 같이 봅니다 — 켜 둔 토글의 비용 (못 내면 그 시전 동안 끄고 쓴 뒤 다시 켭니다) · 실명 중 시야 거리 · 화살 기술이 요구하는 원거리 무기 · 게임의 주문 시야 (계획할 때와 쏘기 직전이 같은 기준) · 갑옷을 입은 아군에게는 마법 갑옷을 쓰지 않습니다
+- 패시브 · 장비가 바꾼 주문 비용 (예: 각성 — 올챙이 능력이 보조 행동) 은 게임 기록에서 읽습니다
+- 다른 모드가 AI 가 못 읽는 꼴로 표적 규칙을 바꾼 주문은 기본 게임 규칙으로 판정합니다
 - 게임이 거부한 행동은 같은 전투에서 처지 (자원 · 상태 · 무기) 가 그대로면 다시 시도하지 않습니다
 - 원거리 공격은 게임이 실제로 날릴 궤적으로 벽 · 지형 · 적 몸에 막히는지 보고 (같은 편 몸은 투사체가 지나갑니다), 막히면 쏘지 않고 트인 자리로 옮겨 쏩니다. 쏠 때는 트인 궤적을 게임이 고르게 합니다
 - 높은 곳에서 쏠 수 있으면 그 자리에서 쏩니다 (게임이 다른 자리로 걸려 보내지 않게)
@@ -178,13 +189,14 @@ settings file (`Script Extender\party_tactics_settings.json`).
 
 ## 알려진 한계 / Known limits
 
+- 생환 두루마리로 죽은 동료를 살리러 걸어간 동료가 사거리를 살짝 못 미쳐 그 차례에 못 살리는 일이 있습니다 (원인을 조사하고 있습니다). / A companion walking over to revive a dead ally with a Scroll of Revivify sometimes stops just out of range, so the ally is not revived that turn (being looked into).
 - 먼 동료에게 던진 치유 물약이 던진 동료의 손에서 깨져 자기를 치유하는 일이 있습니다 (한 전투에서 두 번 — 원인을 조사하고 있습니다). / A healing potion thrown at an ally far away can break in the thrower's hands and heal the thrower instead (seen twice in one fight; being looked into).
 - 물에 선 적에게 번개 주문을 쓰면 물웅덩이 전체가 감전되어 같은 물에 선 동료도 다칠 수 있습니다 — 광역 주문 규칙은 주문 범위 안의 아군만 봅니다. / A lightning spell aimed at an enemy standing in water can electrify the whole pool and hurt allies standing in it.
 - 밀치기 같은 주문이 가끔 동료가 올라갈 수 없는 자리 (예: 위쪽 턱) 를 고릅니다 — 잠깐 멈칫한 뒤 다른 행동을 합니다. / Shove and similar spells sometimes pick a spot the companion cannot walk up to (such as a ledge above it); it pauses briefly and does something else.
 - 다가가서 쏘는 주문의 걸음이 가끔 실패합니다 — 동료가 다른 행동을 합니다. / When a spell needs a few steps first, the walk sometimes fails and the companion does something else.
 - 오래 남는 구름 · 장판에 동료가 나중에 걸어 들어가는 경우는 광역 주문 규칙이 아직 안 봅니다.
 - 특수 기믹이 있는 전투는 아직 손대지 않았습니다.
-- 적이 아주 많은 전투에서는 동료 한 명이 몇 초씩 생각할 수 있습니다 — 설정의 **생각 시간**으로 줄일 수 있습니다.
+- 적이 아주 많은 전투에서는 동료 한 명이 몇 초씩, 가끔은 한 차례에 20초 넘게 생각할 수 있습니다 — 설정의 **생각 시간**으로 줄일 수 있습니다. / In large fights a companion may think for several seconds, now and then for over 20 seconds in one turn; you can lower **Thinking time** in Settings.
 - 멀티플레이 · 패드는 시험하지 않았습니다 (카메라 따라가기는 혼자 하는 판 기준입니다). / Multiplayer and controllers are untested.
 
 ## 소스 / Source
