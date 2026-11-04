@@ -75,6 +75,7 @@ Out of charges, it acts like its automatic role.
 | **Ctrl + T** | 선택한 캐릭터를 직접 조종으로 (AI 가 행동 중이면 그 행동이 끝나고) · Take direct control of the selected character |
 | **Ctrl + Y** | 선택한 캐릭터 AI 켜기/끄기 · Turn AI on/off for the selected character |
 | **Ctrl + F** | 마우스로 가리킨 적에 집중 지시 (적이 아닌 곳을 가리키고 누르면 풀림) · Focus the enemy under the cursor (press it pointing anywhere else to clear) |
+| **Ctrl + B** | 전투 밖에서 AI 동료들이 오래가는 버프 걸기 (한 바퀴 돌고 멈춤 · 다시 누르면 그만) · AI companions cast lasting buffs, outside combat, then stop (press it again to stop early) |
 
 단축키는 **설정** 탭에서 바꿀 수 있습니다 (Ctrl · Shift · Alt 조합 가능 — 0.8.1 까지는 조합 단축키가 먹지 않았습니다. 0.8.2 에서 고쳤습니다).
 Hotkeys can be changed in the **Settings** tab (Ctrl · Shift · Alt combos work — they did nothing up to 0.8.1; fixed in 0.8.2).
@@ -112,12 +113,12 @@ The line at the top of the screen (hover it to see **why** it chose that) can be
 | 설정 / Setting | 고르는 것 / Options |
 |---|---|
 | 언어 · Language | 자동(게임 언어) · English · 한국어 — 한국어는 게임 언어가 한국어일 때만 (SE 창 글꼴) |
-| 단축키 · Hotkey | 위 네 가지 / the four above |
+| 단축키 · Hotkey | 위 다섯 가지 / the five above |
 | 차례 표시 · Turn display | 머리 위 표시(기본 켬) · 위쪽 줄(기본 끔) · 마우스를 올리면 이유 · 애니메이션 끄기 · AI 동료가 행동하는 동안 클릭 무시 · 카메라 따라가기(기본 켬) · 집중 표적 머리 위 표시(기본 켬) / label above the character (on) · line at the top (off) · reasons on hover · no animation · ignore clicks while an AI companion is acting · camera follows the AI companion (on) · mark the focus target above its head (on) |
 | 반응 · Reactions | 주문 슬롯을 쓰는 반응(방어막 · 주문 방해 …)도 AI 가 쓸지 / let the AI use reactions that cost spell slots (Shield, Counterspell…) |
 | 광역 주문 · Area spells | **아군 피격 허용 / 허용 안 함** — 허용이면 "적에게 주는 피해 − 아군 피해 × 4" 가 다른 행동보다 클 때만 씁니다 (Larian 의 적 AI 와 같은 무게) |
 | 소환 주문 · Summons | 전투 중에 AI 가 소환 주문 쓰기 (기본 켬) — 끄면 이미 불러낸 소환수만 움직입니다 / let the AI cast summon spells in combat (on by default); when off, summons already out still act |
-| 전투 밖 버프 · Buffs outside combat | 전투 밖에서 오래가는 버프 걸기 (마법사의 갑옷 · 그림자 갑옷 등 — 슬롯을 안 쓰는 것은 풀릴 때마다) · 슬롯을 쓰는 버프도 긴 휴식 뒤에 한 번 (지원 · 죽음 방비 등 — 가장 득을 보는 동료에게) — 둘 다 기본 켬 / cast lasting buffs outside combat (Mage Armour, Armour of Shadows…, again whenever they wear off) · also spend spell slots on them once after each long rest (Aid, Death Ward…, on the companion who gains most) — both on by default |
+| 버프 단축키 · Buff hotkey | **Ctrl + B** 버프에 슬롯을 쓰는 버프도 넣기 (지원 · 죽음 방비 등 — 주문마다 긴 휴식에 한 번 · 가장 득을 보는 동료에게 · 기본 켬) — 끄면 슬롯을 안 쓰는 버프만 (마법사의 갑옷 · 그림자 갑옷 등) / also spend spell slots on Ctrl + B buffs (Aid, Death Ward…: each spell once per long rest, on the companion who gains most; on by default); when off, only buffs that cost no slot (Mage Armour, Armour of Shadows…) |
 | 표적 고르기 · Target choice | **팀 집중**(기본 켬 — 한 적을 같이 쓰러뜨린다) · 끄면 동료마다 각자 / **team focus** (on by default — gang up on one enemy) · off: each companion picks its own target |
 | 생각 시간 · Thinking time | **깊게**(기본 · 제한 없음) · **보통**(한 번에 약 4초) · **빠르게**(약 2초) — 시간이 다 되면 그때까지 찾은 최선 |
 | 주문 슬롯 · Spell slots | 자동(보스급 적이 있으면 아끼지 않기) · 항상 아끼기 · 항상 아끼지 않기 |
@@ -187,7 +188,7 @@ or an ally the spell could knock down. This also applies to area effects that hu
 - 기절 · 명령 · 넘어뜨리기로 우리 차례를 빼앗는 적은 그만큼 더 위험한 적으로 셉니다 (먼저 쓰러뜨리거나 묶으려 합니다)
 - 같은 종류의 소환은 한 차례에 하나만 부릅니다 — 새로 부르면 앞의 소환수가 사라지기 때문입니다
 - 직접 조종하는 캐릭터에게는 추방처럼 효과로 해치는 한 사람 주문도 걸지 않습니다 (덜 시험했습니다)
-- 전투 밖 버프 — 슬롯을 안 쓰는 버프는 풀릴 때마다, 슬롯을 쓰는 버프는 긴 휴식 뒤 한 번, 가장 득을 보는 동료에게 겁니다 (갑옷을 덮는 버프는 방어도가 가장 많이 오르는 동료부터)
+- 전투 밖 버프 — **Ctrl + B** 를 누르면 한 바퀴 돌고 멈춥니다 (안 누르면 아무 일도 하지 않습니다). 슬롯을 쓰는 버프는 주문마다 긴 휴식에 한 번, 가장 득을 보는 동료에게 겁니다 (갑옷을 덮는 버프는 방어도가 가장 많이 오르는 동료부터)
 - 소환수도 같이 몹니다
 
 ## 버그 제보 / Bug reports
@@ -195,14 +196,20 @@ or an ally the spell could knock down. This also applies to area effects that hu
 **설정 → 그 밖 → 제보용 기록 만들기** 를 누르면 파일 하나가 생깁니다:
 `%LOCALAPPDATA%\Larian Studios\Baldur's Gate 3\Script Extender\PartyTactics\report_1.txt`
 (칸 셋을 돌려 씁니다 — `report_1~3`). [Issues](../../issues) 에 이 파일과 함께 어떤 전투에서 무엇이 어떻게 보였는지 적어 주세요.
-평소에 쓰는 파일은 설정 파일(`Script Extender\party_tactics_settings.json`) 하나뿐입니다.
+평소에 쓰는 파일은 설정 파일(`Script Extender\party_tactics_settings.json`) 과 작은 메모리 기록(`Script Extender\PartyTactics\memory.txt`) 뿐입니다.
+
+게임이 바탕화면으로 튕기면 제보용 기록을 만들 수 없습니다. 게임 폴더 `bin` 의 최신 CrashDump 파일 (`.dmp` · `.mods.txt` · `.state`) 과 `memory.txt` 를 버전 · 하던 일과 함께 올려 주세요.
 
 Press **Settings → Other → Create debug report** to write one file (three rotating slots, `report_1~3`) under
 `Script Extender\PartyTactics\`, and attach it to an [issue](../../issues). Otherwise the mod only writes its
-settings file (`Script Extender\party_tactics_settings.json`).
+settings file (`Script Extender\party_tactics_settings.json`) and a small memory log (`Script Extender\PartyTactics\memory.txt`).
+
+If the game crashes to desktop, the debug report can't be made. Please attach the newest CrashDump files from the game's `bin` folder (`.dmp`, `.mods.txt`, `.state`) and `memory.txt`, with your version and what you were doing.
 
 ## 알려진 한계 / Known limits
 
+- 바탕화면으로 튕긴다는 제보가 있습니다 (불러오는 중 · 전투 중). 원인은 아직 확정하지 못했습니다. 튕기면 위 파일을 보내 주세요. / Some players reported crashes to desktop, while loading or during fights. The cause isn't confirmed. If it happens, please send the files listed above.
+- **Ctrl + B** 버프는 받을 동료가 몇 걸음 떨어져 있으면 가끔 실패합니다. 모여서 다시 누르세요. / A buff from Ctrl + B sometimes fails when the target is a few steps away. Gather the party and press it again.
 - 생환 두루마리로 죽은 동료를 살리러 걸어간 동료가 사거리를 살짝 못 미쳐 그 차례에 못 살리는 일이 있습니다 (원인을 조사하고 있습니다). / A companion walking over to revive a dead ally with a Scroll of Revivify sometimes stops just out of range, so the ally is not revived that turn (being looked into).
 - 먼 동료에게 던진 물약이 던진 동료 곁의 지형 · 장식물에 걸려 그 자리에서 깨질 수 있습니다 (원인을 조사하고 있습니다). / A potion thrown at an ally far away can hit scenery near the thrower and break there instead (being looked into).
 - 물에 선 적에게 번개 주문을 쓰면 물웅덩이 전체가 감전되어 같은 물에 선 동료도 다칠 수 있습니다 — 광역 주문 규칙은 주문 범위 안의 아군만 봅니다. / A lightning spell aimed at an enemy standing in water can electrify the whole pool and hurt allies standing in it.
