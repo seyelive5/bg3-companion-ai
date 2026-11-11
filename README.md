@@ -75,7 +75,7 @@ Out of charges, it acts like its automatic role.
 | **Ctrl + T** | 선택한 캐릭터를 직접 조종으로 (AI 가 행동 중이면 그 행동이 끝나고) · Take direct control of the selected character |
 | **Ctrl + Y** | 선택한 캐릭터 AI 켜기/끄기 · Turn AI on/off for the selected character |
 | **Ctrl + F** | 마우스로 가리킨 적에 집중 지시 (적이 아닌 곳을 가리키고 누르면 풀림) · Focus the enemy under the cursor (press it pointing anywhere else to clear) |
-| **Ctrl + B** | 전투 밖에서 AI 동료들이 오래가는 버프 걸기 (한 바퀴 돌고 멈춤 · 다시 누르면 그만) · AI companions cast lasting buffs, outside combat, then stop (press it again to stop early) |
+| **Ctrl + B** | 전투 밖에서 AI 동료들이 오래가는 버프 · 소환 걸기 (한 바퀴 돌고 멈춤 · 다시 누르면 그만) · AI companions cast lasting buffs and summons, outside combat, then stop (press it again to stop early) |
 
 단축키는 **설정** 탭에서 바꿀 수 있습니다 (Ctrl · Shift · Alt 조합 가능 — 0.8.1 까지는 조합 단축키가 먹지 않았습니다. 0.8.2 에서 고쳤습니다).
 Hotkeys can be changed in the **Settings** tab (Ctrl · Shift · Alt combos work — they did nothing up to 0.8.1; fixed in 0.8.2).
@@ -118,9 +118,9 @@ The line at the top of the screen (hover it to see **why** it chose that) can be
 | 반응 · Reactions | 주문 슬롯을 쓰는 반응(방어막 · 주문 방해 …)도 AI 가 쓸지 / let the AI use reactions that cost spell slots (Shield, Counterspell…) |
 | 광역 주문 · Area spells | **아군 피격 허용 / 허용 안 함** — 허용이면 "적에게 주는 피해 − 아군 피해 × 4" 가 다른 행동보다 클 때만 씁니다 (Larian 의 적 AI 와 같은 무게) |
 | 소환 주문 · Summons | 전투 중에 AI 가 소환 주문 쓰기 (기본 켬) — 끄면 이미 불러낸 소환수만 움직입니다 / let the AI cast summon spells in combat (on by default); when off, summons already out still act |
-| 버프 단축키 · Buff hotkey | **Ctrl + B** 버프에 슬롯을 쓰는 버프도 넣기 (지원 · 죽음 방비 등 — 주문마다 긴 휴식에 한 번 · 가장 득을 보는 동료에게 · 기본 켬) — 끄면 슬롯을 안 쓰는 버프만 (마법사의 갑옷 · 그림자 갑옷 등) / also spend spell slots on Ctrl + B buffs (Aid, Death Ward…: each spell once per long rest, on the companion who gains most; on by default); when off, only buffs that cost no slot (Mage Armour, Armour of Shadows…) |
+| 버프 단축키 · Buff hotkey | **Ctrl + B** 에 슬롯을 쓰는 버프 · 소환도 넣기 (지원 · 죽음 방비 등 — 주문마다 긴 휴식에 한 번 · 버프는 가장 득을 보는 동료에게 · 기본 켬) — 끄면 슬롯을 안 쓰는 것만 (마법사의 갑옷 · 그림자 갑옷 등) · **오래가는 소환도 포함** (정령 소환 · 스크래치 등 — 그 소환수가 이미 나와 있으면 안 부름 · 위의 소환 주문 칸도 켜져 있어야 함 · 소환수마다 전투 차례가 하나씩 늘어남 · 기본 켬) / also spend spell slots on Ctrl + B (Aid, Death Ward…: each spell once per long rest, buffs on the companion who gains most; on by default); when off, only buffs and summons that cost no slot (Mage Armour, Armour of Shadows…) · **also summon** (Conjure Elemental, Scratch…: only if that summon isn't out already; needs Summons on; each summon adds a turn in combat; on by default) |
 | 표적 고르기 · Target choice | **팀 집중**(기본 켬 — 한 적을 같이 쓰러뜨린다) · 끄면 동료마다 각자 / **team focus** (on by default — gang up on one enemy) · off: each companion picks its own target |
-| 생각 시간 · Thinking time | **깊게**(기본 · 제한 없음) · **보통**(한 번에 약 4초) · **빠르게**(약 2초) — 시간이 다 되면 그때까지 찾은 최선 |
+| 생각 시간 · Thinking time | **깊게**(기본 · 제한 없음) · **보통**(한 번에 약 4초) · **빠르게**(약 2초) — 시간이 다 되면 그때까지 찾은 최선. 생각에 쓰는 시간이라, 게임을 멈추지 않으려고 나눠 생각하는 만큼 실제 기다림은 더 길 수 있습니다 / the time spent thinking; since it now thinks in small steps between frames, the actual wait can be longer |
 | 주문 슬롯 · Spell slots | 자동(보스급 적이 있으면 아끼지 않기) · 항상 아끼기 · 항상 아끼지 않기 |
 | 물건 쓰기 · Items | 두루마리 · 폭탄 · 물약 · 특수 화살마다 **안 씀 · 아끼기**(게임의 적 AI 와 같은 기준) **· 보통**(기본) **· 아끼지 않기** — 파티 탭의 **캐릭터별 물건 쓰기**에서 캐릭터마다 따로 / for scrolls · bombs and grenades · potions · special arrows: Don't use · Save · Normal (default) · Never save — also per character in the Party tab (**Items by character**) |
 
@@ -145,7 +145,7 @@ or an ally the spell could knock down. This also applies to area effects that hu
 게임 데이터를 직접 읽습니다 — 주문 · 상태 · 부스트 · 조건 함수 · 물건.
 이름으로 특별 취급하는 목록이 아니라, 그 행동이 실제로 만드는 **결과의 값**으로 고릅니다.
 
-- 쓰러진 동료 일으키기, 치유, 집중 끊기, 자원 아끼기
+- 쓰러진 동료 일으키기, 치유 (치유를 못 받는 상태의 동료는 빼고, 받는 동료가 다음 적 차례에 쓰러질 위험이 얼마나 줄어드는지까지 봅니다 — 뒤쪽은 덜 시험했습니다), 집중 끊기, 자원 아끼기
 - 자리 — 사선 · 고저차 · 위험 표면 · 기회공격 (몬스터의 발톱 · 물기 같은 타고난 공격까지) · 실제 걸어갈 길 (다른 몸 · 계단식 턱 · 사다리)
 - 다음 적 차례 — 적마다 누구를 칠지 (근접은 가까운 쪽 · 원거리는 닿는 사람에게 고르게 · 맞히기 쉬운 쪽 · 그 적이 이 싸움에서 노려 온 사람 · 그 적을 친 사람을 더 · 사거리가 더 긴 다른 공격까지 · 다음 차례에 실제로 쓸 수 있는 공격만) 와 동료마다 쓰러질 확률 (마력탄처럼 여러 발 나가는 공격은 발마다 · 이미 붙은 불타기 같은 지속 피해까지) 을 셉니다. 설 자리 · 소환 자리 · 치유 물약을 마실지 · 방어 주문 (AC · 저항 · 임시 HP) 의 값에 씁니다
 - 팀 집중 — 위 "팀 집중" 처럼 공격할 적을 팀 기준으로 (집중 표적 · 다친 적 마무리)
@@ -165,7 +165,7 @@ or an ally the spell could knock down. This also applies to area effects that hu
 - 돌진 공격 같은 돌진 · 소환한 포박 덩굴의 끌어당기기 · 망자 조종 · 언데드 생성 (이 전투에서 죽은 몸 — 언데드 노예로 늘어난 수만큼 서로 다른 시체를 · 아직 덜 시험했습니다)
 - 한 차례에 여러 행동을 짤 때 직업 자원 · 명중할 때 드는 비용 (치유의 손길 횟수 · 강타 등) 을 같이 세고, 빗나가 안 치렀으면 남은 것으로 다시 짭니다
 - 사거리 · 기회공격 반경 · 치명타 · 낙하 피해 · 밀기와 던지기 거리 · 명중 유리/불리는 게임이 계산하는 식 그대로
-- 시전하기 전에 게임이 보는 것을 같이 봅니다 — 켜 둔 토글의 비용 (못 내면 그 시전 동안 끄고 쓴 뒤 다시 켭니다) · 실명 중 시야 거리 · 화살 기술이 요구하는 원거리 무기 · 게임의 주문 시야 (계획할 때와 쏘기 직전이 같은 기준) · 갑옷을 입은 아군에게는 마법사의 갑옷을 쓰지 않습니다
+- 시전하기 전에 게임이 보는 것을 같이 봅니다 — 켜 둔 토글의 비용 (못 내면 그 시전 동안 끄고 쓴 뒤 다시 켭니다) · 실명 중 시야 거리 · 화살 기술이 요구하는 원거리 무기 · 게임의 주문 시야 (계획할 때와 쏘기 직전이 같은 기준) · 숙련이 없는 갑옷 (입고 있으면 주문을 쓰지 않습니다) · 갑옷을 입은 아군에게는 마법사의 갑옷을 쓰지 않습니다
 - 패시브 · 장비가 바꾼 주문 비용 (예: 각성 — 올챙이 능력이 보조 행동) 은 게임 기록에서 읽습니다
 - 다른 모드가 AI 가 못 읽는 꼴로 표적 규칙을 바꾼 주문은 기본 게임 규칙으로 판정합니다
 - 게임이 거부한 행동은 같은 전투에서 처지 (자원 · 상태 · 무기) 가 그대로면 다시 시도하지 않습니다
@@ -175,20 +175,24 @@ or an ally the spell could knock down. This also applies to area effects that hu
 - 게임이 걸어갈 길을 못 찾으면 그 걸음을 멈추고 다시 짭니다 (예전에는 게임이 목적지로 옮겨 놓아 순간이동처럼 보였습니다)
 - 걸어서 못 닿는 행동은 점프 · 이동 주문 한 번을 섞은 길 (지금 자리에서 뛰기 · 걷다가 뛰기) 로 닿는지 보고 값으로 견줍니다
 - 자리를 고치려고 6m 미만을 옮길 때는 점프 · 순간이동을 쓰지 않고 (옮긴 자리에서 곧바로 행동이 닿을 때 · 위험 표면에서 빠질 때는 예외), 횟수가 정해진 순간이동(안개 걸음 등)은 적 곁에서 빠지거나 옮긴 자리에서 곧바로 행동이 닿을 때만 씁니다
-- 기회공격을 부르거나 공중에서 끊길 점프는 고르지 않고, 점프 · 순간이동 착지는 게임이 받아 주는 자리로 고릅니다 (곁의 몸 · 발밑 높낮이)
+- 기회공격을 부르거나 공중에서 끊길 점프는 고르지 않고, 점프 · 순간이동 착지는 게임이 받아 주는 자리로 고릅니다 (곁의 몸 · 발밑 높낮이). 낭떠러지 · 지도 밖에는 내려서지 않고, 자리를 옮기려 뛰어내릴 때는 낙하 피해를 셉니다 (덜 시험했습니다). 점프 · 순간이동 뒤에 행동이 남으면 내려선 자리에서 이어 짭니다
 - 불 · 용암 같은 위험 표면은 차례 끝 · 다음 차례 시작에 받을 피해까지 셉니다. 머물면 쓰러질 것 같으면 빠지는 것이 먼저입니다
 - 적이 밀쳐 용암 · 낭떠러지로 떨어뜨릴 수 있는 자리 (밀기 · 밀어내는 주문 · 폭발 화살) 는 그 위험을 값으로 셉니다 — 차례를 마칠 자리 · 다가가 멈출 자리 · 시전할 자리 모두
 - 소환 주문 — 적 곁 · 지킬 동료 앞 · 자기 곁 가운데 소환수가 가장 쓸모 있는 자리에 부릅니다. 자리는 게임이 받아 주는 곳으로 고르고 (다른 몸 · 문 · 큰 소환수가 턱에 걸치는 바닥을 피합니다) 한 차례에 둘을 부르면 자리를 나눕니다. 싸울 힘이 없는 패밀리어 · 애완동물은 쓰지 않습니다
 - 시전자 앞 직사각형 범위 주문 (천둥파 · 번개 줄기 · 돌풍) 은 게임과 같은 규칙으로 맞을 몸을 셉니다 — 벽 · 문 뒤의 몸은 빼고, 표적에 닿지 않는 자리에서는 쓰지 않습니다
 - 적에게 조종당한 동료 (인간형 지배 등) 는 AI 가 몰지 않고 게임에 맡깁니다 (사람이 조종할 때와 같습니다)
 - 야생 형상 — 짐승 몸으로 낼 행동이 더 나으면 변신하고, 변신 전에 주문을 쓰는 편이 나으면 주문부터, 제 몸이 더 나으면 풉니다. 변신한 뒤에는 짐승 몸으로 남은 행동을 다시 짭니다 (스스로 고르는 변신 · 풀기는 아직 덜 시험했습니다)
-- 추가 공격은 게임 조건 그대로 — 짐승 몸 · 맨손 · 던지기 공격도 추가 공격으로 내고, 추가 공격이 또 추가 공격을 주면 다시 짜서 이어 칩니다
+- 추가 공격은 게임 조건 그대로 — 짐승 몸 · 맨손 · 던지기 공격도 추가 공격으로 내고, 추가 공격이 또 추가 공격을 주면 다시 짜서 이어 칩니다. 무기 공격을 고를 때는 뒤따를 추가 공격까지 쳐서 캔트립과 견줍니다
 - 집중 주문은 한 차례에 하나만 짭니다 (둘째가 첫째를 끝냅니다). 자기를 다치게 하는 주문 (무력행사) 은 그 피해로 깨질 집중까지 셉니다 (덜 시험했습니다)
 - 적이 멀면 달리기로 다가갑니다 — 적 여럿 한가운데로 뛰어드는 자리면 걷기만 합니다
 - 기절 · 명령 · 넘어뜨리기로 우리 차례를 빼앗는 적은 그만큼 더 위험한 적으로 셉니다 (먼저 쓰러뜨리거나 묶으려 합니다)
 - 같은 종류의 소환은 한 차례에 하나만 부릅니다 — 새로 부르면 앞의 소환수가 사라지기 때문입니다
 - 직접 조종하는 캐릭터에게는 추방처럼 효과로 해치는 한 사람 주문도 걸지 않습니다 (덜 시험했습니다)
-- 전투 밖 버프 — **Ctrl + B** 를 누르면 한 바퀴 돌고 멈춥니다 (안 누르면 아무 일도 하지 않습니다). 슬롯을 쓰는 버프는 주문마다 긴 휴식에 한 번, 가장 득을 보는 동료에게 겁니다 (갑옷을 덮는 버프는 방어도가 가장 많이 오르는 동료부터)
+- 전투 밖 버프 · 소환 — **Ctrl + B** 를 누르면 한 바퀴 돌고 멈춥니다 (안 누르면 아무 일도 하지 않습니다). 슬롯을 쓰는 버프 · 소환은 주문마다 긴 휴식에 한 번이고, 버프는 가장 득을 보는 동료에게 겁니다 (갑옷을 덮는 버프는 방어도가 가장 많이 오르는 동료부터). 오래가는 소환 (정령 소환 · 스크래치 등) 은 그 소환수가 아직 없을 때만 부릅니다
+- 되돌아오는 투척 무기를 든 동료는 그 무기를 던집니다
+- 영혼 수호자처럼 자기 둘레에 거는 오라 주문은 적들 곁으로 걸어 들어가서 켜고, 켠 뒤에는 적이 더 많이 드는 자리를 고릅니다 (덜 시험했습니다)
+- 성역 — 성역이 걸린 적은 공격하지 않고, 성역을 두른 동료는 공격하면 성역을 잃는 손해까지 따져 고릅니다 (뒤쪽은 덜 시험했습니다)
+- 투명 — 안 보이는 적은 한 사람을 겨누는 공격 · 주문의 표적으로 고르지 않고, 스스로 투명해지는 행동 (투명 물약 등) 은 그 투명을 깨는 행동 뒤로 미룹니다
 - 소환수도 같이 몹니다
 
 ## 버그 제보 / Bug reports
@@ -217,7 +221,7 @@ If the game crashes to desktop, the debug report can't be made. Please attach th
 - 다가가서 쏘는 주문의 걸음이 가끔 실패합니다 — 동료가 다른 행동을 합니다. / When a spell needs a few steps first, the walk sometimes fails and the companion does something else.
 - 오래 남는 구름 · 장판에 동료가 나중에 걸어 들어가는 경우는 광역 주문 규칙이 아직 안 봅니다.
 - 특수 기믹이 있는 전투는 아직 손대지 않았습니다.
-- 적이 아주 많은 전투에서는 동료 한 명이 몇 초씩, 드물게는 한 차례에 20초 넘게 생각할 수 있습니다 — 설정의 **생각 시간**으로 줄일 수 있습니다. / In large fights a companion may think for several seconds, rarely for over 20 seconds in one turn; you can lower **Thinking time** in Settings.
+- 적이 아주 많은 전투에서는 동료 한 명이 몇 초씩, 드물게는 한 차례에 20초 넘게 생각할 수 있습니다 — 설정의 **생각 시간**으로 줄일 수 있습니다. 생각하는 동안 게임이 멈추지는 않지만 1 초 안쪽으로 잠깐 끊길 수 있습니다. / In large fights a companion may think for several seconds, rarely for over 20 seconds in one turn; you can lower **Thinking time** in Settings. The game keeps running while it thinks, but it can stutter briefly (under a second).
 - AI 가 스스로 고르는 야생 형상 변신 · 풀기는 아직 덜 시험했습니다 (변신술사 역할로 고른 동료는 시험했습니다). / Wild Shape picked by the AI on its own, and changing back, is less tested than the Shapeshifter role.
 - 멀티플레이 · 패드는 시험하지 않았습니다 (카메라 따라가기는 혼자 하는 판 기준입니다). / Multiplayer and controllers are untested.
 
