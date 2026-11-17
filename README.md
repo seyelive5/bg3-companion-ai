@@ -194,6 +194,11 @@ or an ally the spell could knock down. This also applies to area effects that hu
 - 영혼 수호자처럼 자기 둘레에 거는 오라 주문은 적들 곁으로 걸어 들어가서 켜고, 켠 뒤에는 적이 더 많이 드는 자리를 고릅니다 (덜 시험했습니다)
 - 성역 — 성역이 걸린 적은 공격하지 않고, 성역을 두른 동료는 공격하면 성역을 잃는 손해까지 따져 고릅니다 (뒤쪽은 덜 시험했습니다)
 - 투명 — 안 보이는 적은 한 사람을 겨누는 공격 · 주문의 표적으로 고르지 않고, 스스로 투명해지는 행동 (투명 물약 등) 은 그 투명을 깨는 행동 뒤로 미룹니다
+- 주문 슬롯처럼 아껴 쓰는 자원이 드는 치유는 받는 동료 가운데 누가 쓰러졌거나 · HP 가 절반 밑이거나 · 곧 쓰러질 것 같을 때만 씁니다 (소환수는 세지 않습니다). 자기 둘레를 치유하는 주문 (다중 치유의 단어 · 생명 보존) 은 시전자 본인이 멀쩡해도 다친 동료가 있으면 씁니다
+- 자기 행동으로 막 쓸 수 있게 된 기술 (격노 뒤의 원소 식칼 등) 은 그 자리에서 다시 짜서 씁니다
+- 기회공격을 맞고 멈춘 걸음은 곧바로 이어 걷습니다. 걸어서 지나가면 기회공격을 맞는 길은 점프 · 비행 · 순간이동으로 그 구간을 넘는 길과 견줍니다 (뒤쪽은 덜 시험했습니다)
+- 별의 회합 드루이드의 별자리 형태처럼 형태를 바꾸면 못 쓰게 되는 주문은 먼저 쓰고 바꿉니다 (덜 시험했습니다)
+- 안개구름처럼 시야를 막는 구름에 가린 땅에는 소환 · 땅을 겨냥하는 주문을 쓰지 않습니다 (덜 시험했습니다)
 - 소환수도 같이 몹니다
 
 ## 버그 제보 / Bug reports
@@ -220,6 +225,7 @@ If the game crashes to desktop, the debug report can't be made. Please attach th
 - 물에 선 적에게 번개 주문을 쓰면 물웅덩이 전체가 감전되어 같은 물에 선 동료도 다칠 수 있습니다 — 광역 주문 규칙은 주문 범위 안의 아군만 봅니다. / A lightning spell aimed at an enemy standing in water can electrify the whole pool and hurt allies standing in it.
 - 밀기 같은 주문이 가끔 동료가 올라갈 수 없는 자리 (예: 위쪽 턱) 를 고릅니다 — 잠깐 멈칫한 뒤 다른 행동을 합니다. / Shove and similar spells sometimes pick a spot the companion cannot walk up to (such as a ledge above it); it pauses briefly and does something else.
 - 다가가서 쏘는 주문의 걸음이 가끔 실패합니다 — 동료가 다른 행동을 합니다. / When a spell needs a few steps first, the walk sometimes fails and the companion does something else.
+- 적 곁에 닿은 뒤 동료가 한두 걸음 더 움직이는 일이 있습니다 (조사하고 있습니다). / A companion sometimes takes a step or two more right after reaching an enemy (being looked into).
 - 오래 남는 구름 · 장판에 동료가 나중에 걸어 들어가는 경우는 광역 주문 규칙이 아직 안 봅니다.
 - 특수 기믹이 있는 전투는 아직 손대지 않았습니다.
 - 적이 아주 많은 전투에서는 동료 한 명이 몇 초씩, 드물게는 한 차례에 20초 넘게 생각할 수 있습니다 — 설정의 **생각 시간**으로 줄일 수 있습니다. 생각하는 동안 게임이 멈추지는 않지만 1 초 안쪽으로 잠깐 끊길 수 있습니다. / In large fights a companion may think for several seconds, rarely for over 20 seconds in one turn; you can lower **Thinking time** in Settings. The game keeps running while it thinks, but it can stutter briefly (under a second).
